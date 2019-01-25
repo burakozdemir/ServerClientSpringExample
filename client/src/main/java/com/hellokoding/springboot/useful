@@ -1,0 +1,104 @@
+
+
+
+
+    /*
+    public static String uploadDirectory = System.getProperty("user.dir")+"/uploads";
+    public final String endPoint = "http://10.1.18.55:8085";
+
+    @Autowired
+    RestTemplate restTemplate;
+
+
+    @RequestMapping("/")
+    public String hello(){ return "WEB-INF/sendFile.jsp"; }
+
+
+
+
+    @RequestMapping(value="/upload", method = RequestMethod.POST)
+    @ResponseBody
+    public String hello(Model model, @RequestParam(value="file") MultipartFile file) {
+        StringBuilder fileNames = new StringBuilder();
+        Path fileNameAndPath = Paths.get(uploadDirectory, file.getOriginalFilename());
+        fileNames.append(file.getOriginalFilename()+" ");
+        try {
+            Files.write(fileNameAndPath, file.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("asdasdas");
+
+        //SAVE THE DATABASE
+        //uploadService.uploadFile(file);
+
+        model.addAttribute("message", "Successfully uploaded files "+fileNames.toString());
+
+        return "/WEB-INF/hello.jsp";
+    }
+
+    public Boolean addPage() {
+        try {
+            ResponseEntity<String> response = restTemplate.postForEntity( endPoint + "/message", "aa", String.class);
+            System.out.println(response.getBody());
+            return true;
+        } catch (RestClientException ex) {
+
+        }
+        return false;
+    }
+
+    @Autowired
+    private CsvService uploadService;
+
+    @Autowired
+    private EmailService mailservice;
+
+    @RequestMapping(value="/upload", method = RequestMethod.POST)
+    public String hello(Model model, @RequestParam(value="csvFile") MultipartFile file) {
+        StringBuilder fileNames = new StringBuilder();
+        Path fileNameAndPath = Paths.get(uploadDirectory, file.getOriginalFilename());
+        fileNames.append(file.getOriginalFilename()+" ");
+        try {
+            Files.write(fileNameAndPath, file.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("asdasdas");
+
+        //SAVE THE DATABASE
+        //uploadService.uploadFile(file);
+
+        model.addAttribute("message", "Successfully uploaded files "+fileNames.toString());
+
+        return "/WEB-INF/hello.jsp";
+    }
+
+    /*
+    @RequestMapping(value="/getPersons",method = RequestMethod.GET)
+    public Iterable<Person> getPersons(HttpServletResponse response) throws IOException {
+        Iterable<Person> iter = uploadService.getAllPerson();
+        for (Person per : iter) {
+            System.out.println("sendIp:"+per.sendIp()+"text");
+        }
+
+        /**
+         * RESTCONTROLLER ile yonlendırme bu sekılde
+         * CONTROLLER ile yonlendırme return seklınde
+
+        //response.sendRedirect("hello");
+
+        return uploadService.getAllPerson(); }
+
+
+    @RequestMapping("/")
+    public String hello(){ return ""; }
+
+    @RequestMapping("/hello")
+    public String hi(HttpServletResponse response,RedirectAttributes redirectAttributes) throws IOException {
+        //response.sendRedirect("/webapp/WEB-INF/hello.jsp");
+        //With myController
+        return "WEB-INF/formuAl.jsp";
+
+    }
+*/

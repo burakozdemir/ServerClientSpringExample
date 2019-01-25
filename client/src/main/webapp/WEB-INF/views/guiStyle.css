@@ -1,0 +1,31 @@
+body{
+	background-color: #D4E6F1;
+}
+div.general{
+	margin : auto;
+	padding: 20px;
+	width: 35%;
+	font-family: AtlasGrotesk,sans-serif;
+	color: grey;
+	background-color: white;
+	border-style: solid;
+	border-radius: 30px;
+	border-color: grey;
+}
+table{
+	width: 100%;
+}
+ th, td {
+    border-bottom: 1px solid #ddd;
+}
+.txtInput{
+	border-radius: 10px;
+	height: 20px;
+	width: 50%;
+}
+.myLabel{
+	font-weight:bold;
+}
+.fileBtn{
+	font-family: AtlasGrotesk,sans-serif;
+}
